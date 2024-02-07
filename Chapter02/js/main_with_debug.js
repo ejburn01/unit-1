@@ -1,3 +1,5 @@
+// Defining city variables
+
 var cityPop = [
 	{ 
 		city: 'Madison',
@@ -17,13 +19,18 @@ var cityPop = [
 	}
 ];
 
+//Adding in new cityPop column and its values
+
 function addColumns(cityPop){
     
+    //Loop through each row of the table, starting with the header row
     document.querySelectorAll("tr").forEach(function(row, i){
 
     	if (i == 0){
 
     		row.insertAdjacentHTML('beforeend', '<th>City Size</th>');
+
+        // After updating the header row when i = 0, now we update the rows which contain values
     	} else {
 
     		var citySize;
@@ -43,8 +50,11 @@ function addColumns(cityPop){
     });
 };
 
+// Add in hovering and clicking events to the webpage
+
 function addEvents(){
 
+    //Change the text style to a random color when hovering over it
 	document.querySelector("table").addEventListener("mouseover", function(){var color = "rgb(";
 
 	for (var i=0; i<3; i++){
@@ -63,6 +73,7 @@ function addEvents(){
 	this.style.color = color;
 }})
 
+//Pop up a text box when clicking the table
 	function clickme(){
 
 		alert('Hey, you clicked me!');
@@ -75,7 +86,9 @@ function addEvents(){
 //initialize function called when the script loads
 function initialize(){
     cities()
+    //Call the addEvents function
 	addEvents()
+    //Call the addColumns function and pass in the cityPop list
 	addColumns(cityPop)
 };
 
