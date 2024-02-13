@@ -90,6 +90,7 @@ function initialize(){
 	addEvents()
     //Call the addColumns function and pass in the cityPop list
 	addColumns(cityPop)
+    //Call the function to retrieve the MegaCities data
     jsAjax()
 };
 
